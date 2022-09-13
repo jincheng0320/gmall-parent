@@ -120,7 +120,7 @@ public class GoodsServiceImpl implements GoodsService {
             Optional<Goods> optionalGoods = goodsDao.findById(goodsId);
             if (optionalGoods.isPresent()){
                 //获取商品信息
-                Goods goods = new Goods();
+                Goods goods = optionalGoods.get();
                 //热度值更新
                 goods.setHotScore(hotScore.longValue());
                 //更新覆盖旧数据
